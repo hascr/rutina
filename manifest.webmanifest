@@ -1,0 +1,17 @@
+{
+  "name": "Rutina Balón y Fuerza",
+  "short_name": "Rutina",
+  "description": "Rutina semanal con balón, fuerza y cuidado de espalda e ingle",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14202b",
+  "theme_color": "#14202b",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

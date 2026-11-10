@@ -1,6 +1,6 @@
 /* Service worker: funciona sin internet y se actualiza solo.
    Al publicar cambios, sube el número de VERSION para forzar la actualización. */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = 'rutina-' + VERSION;
 const FILES = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png'];
 

@@ -39,7 +39,8 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17p
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px}
 h1{font-family:var(--display);font-size:2.1rem;line-height:1.05;margin:0 0 4px;text-wrap:balance;letter-spacing:.01em}
 .sub{color:var(--muted);margin:0 0 16px}
-.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.tabs{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-bottom:14px}
+.tab{grid-column:span 2}.tab.we{grid-column:span 5;border-style:dashed}.tab small{display:block}
 .tab{font-family:var(--display);font-size:1.15rem;font-weight:700;padding:10px 0 8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;line-height:1.1}
 .tab small{display:block;font-family:var(--body);font-weight:400;font-size:.68rem;color:var(--muted);margin-top:2px}
 .tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -175,7 +176,8 @@ body.hs{padding-top:34px}
 .hsum div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
 .hsum b{display:block;font-family:var(--display);font-size:1.7rem;line-height:1.1}
 .hsum span{font-size:.8rem;color:var(--muted)}
-.wk{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:10px}
+.wk{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:10px}
+.wk div.o{border-style:dashed}
 .wk div{text-align:center;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 0;font-size:.8rem;color:var(--muted)}
 .wk div.y{background:var(--ok);border-color:var(--ok);color:#fff;font-weight:700}
 .hrow{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center}
@@ -192,7 +194,7 @@ body.hs{padding-top:34px}
 <body>
 <div class="wrap">
   <h1>Rutina con balón y fuerza</h1>
-  <p class="sub">Lunes a viernes, 30 a 45 minutos. Fuerza para cuidar la espalda y juego con el aro.</p>
+  <p class="sub">Lunes a viernes, 30 a 45 minutos, más sábado y domingo opcionales (suaves). Fuerza para cuidar la espalda y juego con el aro.</p>
 
   <div class="soccer" role="group" aria-label="Día de fútbol">
     <span>Esta semana juego fútbol el:</span>
@@ -763,11 +765,31 @@ var S={
   ],
   fin:[{id:'v7',n:'Juego libre: 21 con penalización',p:'15 min',eq:'Aro y balón',c:'Cada tiro fallado cuesta 5 sentadillas sin peso. Cierra la semana jugando.',q:'juego baloncesto solo en casa 21'}],
   rainFin:[{id:'v7r',n:'Circuito bajo techo',p:'6 rondas de 2 min 30 s',eq:'Balón y cuerda',c:'45 s de dribleo estático veloz, 45 s de cuerda, 30 s de sentadillas sin peso y 30 s de descanso.',q:'circuito en casa cuerda dribleo sentadillas'}]}
+ ,sab:{name:'Activo suave',opt:true,focus:'Opcional · movimiento ligero y equilibrio',time:'20 a 30 min',eq:['Colchoneta','Piscina','Bici estática'],
+  main:[
+  {id:'w1',n:'Gato-camello',p:'2 × 10',eq:'Colchoneta',c:'En cuatro apoyos, redondea y arquea la espalda despacio, al ritmo de la respiración.',q:'gato camello ejercicio movilidad espalda'},
+  {id:'w4',n:'Balanceo lateral de pierna',p:'1 × 10 por lado',eq:'Sin equipo',c:'Apóyate en una pared y balancea la pierna de lado a lado, sin rebotar. Prepara los aductores (la ingle).',q:'balanceo lateral de pierna calentamiento aductores'},
+  {id:'s3',n:'Puente de glúteo',p:'2 × 12',eq:'Colchoneta',c:'Sube la cadera apretando glúteos y baja controlado.',q:'puente de glúteo técnica'},
+  {id:'s5',n:'Bird-dog',p:'2 × 8 por lado',eq:'Colchoneta',c:'Lento, con cadera quieta.',q:'bird dog ejercicio espalda baja'},
+  {id:'s8',n:'Equilibrio sobre una pierna',p:'2 × 30 s por lado',eq:'Sin equipo',c:'Cerca de una pared por seguridad. Cuando te resulte fácil, cierra los ojos o gira la cabeza.',q:'ejercicios de equilibrio sobre una pierna'}
+  ],
+  fin:[{id:'s7',n:'Caminata o nado suave en la piscina',p:'10 a 15 min',eq:'Piscina',c:'Sin esfuerzo. Solo para soltar piernas y espalda.',q:'caminar en la piscina ejercicio bajo impacto'}],
+  rainFin:[{id:'s7r',n:'Bici estática muy suave',p:'10 a 15 min',eq:'Bici estática',c:'Resistencia baja y ritmo de paseo. Suelta piernas y espalda sin esfuerzo.',q:'bicicleta estática principiantes postura'}]},
+ dom:{name:'Movilidad',opt:true,focus:'Opcional · estiramientos y recuperación',time:'15 a 20 min',eq:['Colchoneta','Bloque de yoga','Piscina'],
+  main:[
+  {id:'s1',n:'Gato-camello',p:'2 × 10',eq:'Colchoneta',c:'Movimiento lento y amplio, sin forzar.',q:'gato camello ejercicio movilidad espalda'},
+  {id:'s2',n:'Postura del niño con respiración',p:'1 min',eq:'Colchoneta',c:'Siéntate sobre los talones, brazos al frente y respira profundo hacia la espalda baja.',q:'postura del niño yoga espalda baja'},
+  {id:'s9',n:'Mariposa suave',p:'2 × 30 s',eq:'Colchoneta',c:'Sentado con las plantas de los pies juntas. Deja caer las rodillas sin forzar ni rebotar. Solo hasta una tensión leve.',q:'estiramiento mariposa aductores suave'},
+  {id:'s6',n:'Estiramiento de flexores de cadera',p:'2 × 30 s por lado',eq:'Bloque de yoga',c:'Rodilla en el piso, manos sobre el bloque. Aprieta el glúteo de la pierna de atrás.',q:'estiramiento flexor de cadera zancada rodilla'},
+  {id:'s4',n:'Curl-up de McGill',p:'3 × 6 con pausa de 5 s',eq:'Colchoneta',c:'Una pierna doblada y manos bajo la espalda baja. Sube solo la cabeza y hombros.',q:'curl up McGill ejercicio espalda'}
+  ],
+  fin:[{id:'s7',n:'Caminata o nado suave en la piscina',p:'10 a 15 min',eq:'Piscina',c:'Sin esfuerzo. Solo para soltar piernas y espalda.',q:'caminar en la piscina ejercicio bajo impacto'}],
+  rainFin:[{id:'s7r',n:'Bici estática muy suave',p:'10 a 15 min',eq:'Bici estática',c:'Resistencia baja y ritmo de paseo. Suelta piernas y espalda sin esfuerzo.',q:'bicicleta estática principiantes postura'}]}
 };
-var DAYS=[['lun','Lun','Lunes'],['mar','Mar','Martes'],['mie','Mié','Miércoles'],['jue','Jue','Jueves'],['vie','Vie','Viernes']];
+var DAYS=[['lun','Lun','Lunes'],['mar','Mar','Martes'],['mie','Mié','Miércoles'],['jue','Jue','Jueves'],['vie','Vie','Viernes'],['sab','Sáb','Sábado'],['dom','Dom','Domingo']];
 var soccer='jue', cur='lun', done={}, rain=false, hist=[], kg=78, sess=null, vsel='plan', curKey='', curKeys=[], lastSaved='';
 function sessionFor(d){
-  if(d==='lun')return 'lun'; if(d==='mar')return 'mar'; if(d==='vie')return 'vie';
+  if(d==='lun')return 'lun'; if(d==='mar')return 'mar'; if(d==='vie')return 'vie'; if(d==='sab')return 'sab'; if(d==='dom')return 'dom';
   return d===soccer?'suave':'cardio';
 }
 function load(){try{done=JSON.parse(localStorage.getItem('rutina-done')||'{}');var s=localStorage.getItem('rutina-soccer');if(s)soccer=s;rain=(localStorage.getItem('rutina-rain')==='1');}catch(e){done={};}
@@ -839,16 +861,16 @@ function streak(){
   return n;
 }
 function histHtml(){
-  var ws=weekStart(new Date()),wk='',i,j,dd,wkDays=0,wkK=0,wkS=0,allK=0,allS=0,names=['Lun','Mar','Mié','Jue','Vie'];
+  var ws=weekStart(new Date()),wk='',i,j,dd,wkDays=0,wkK=0,wkS=0,allK=0,allS=0,names=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
   var inWeek={};
   for(i=0;i<hist.length;i++){allK+=hist[i].kcal;allS+=hist[i].secs;}
-  for(i=0;i<5;i++){
+  for(i=0;i<7;i++){
     dd=new Date(ws.getFullYear(),ws.getMonth(),ws.getDate()+i);var ds=ymd(dd),has=false;
     for(j=0;j<hist.length;j++){if(hist[j].d===ds){has=true;wkK+=hist[j].kcal;wkS+=hist[j].secs;}}
-    if(has){wkDays++;}
-    wk+='<div class="'+(has?'y':'')+'">'+names[i]+(has?' ✓':'')+'</div>';
+    if(has&&i<5){wkDays++;}
+    wk+='<div class="'+(has?'y':'')+(i>4?' o':'')+'">'+names[i]+(has?' ✓':'')+'</div>';
   }
-  var h='<div class="hsum"><div><b>'+wkDays+' / 5</b><span>días esta semana</span></div><div><b>'+streak()+'</b><span>racha (días hábiles)</span></div>'+
+  var h='<div class="hsum"><div><b>'+wkDays+' / 5</b><span>días de lun a vie (sáb y dom suman kcal)</span></div><div><b>'+streak()+'</b><span>racha (días hábiles)</span></div>'+
     '<div><b>≈ '+wkK+'</b><span>kcal esta semana · '+Math.round(wkS/60)+' min</span></div><div><b>≈ '+allK+'</b><span>kcal en total · '+hist.length+' sesiones</span></div></div>'+
     '<div class="wk">'+wk+'</div>'+
     '<label class="kgl">Mi peso (kg): <input type="number" id="kgi" min="30" max="250" step="0.5" value="'+kg+'" inputmode="decimal"></label>'+
@@ -872,22 +894,22 @@ function card(dayKey,ex,num){
    tmrHtml(k,ex.id)+'</article>';
 }
 function render(){
-  var tabs=document.getElementById('tabs'), today=new Date().getDay(), tmap={1:'lun',2:'mar',3:'mie',4:'jue',5:'vie'};
+  var tabs=document.getElementById('tabs'), today=new Date().getDay(), tmap={1:'lun',2:'mar',3:'mie',4:'jue',5:'vie',6:'sab',0:'dom'};
   tabs.innerHTML=DAYS.map(function(d){
     var s=S[sessionFor(d[0])], isT=tmap[today]===d[0];
-    var tdone=false,wsd=weekStart(new Date()),ix={lun:0,mar:1,mie:2,jue:3,vie:4}[d[0]],tds=ymd(new Date(wsd.getFullYear(),wsd.getMonth(),wsd.getDate()+ix)),hh;for(hh=0;hh<hist.length;hh++){if(hist[hh].d===tds){tdone=true;}}
-    return '<button class="tab'+(isT?' today':'')+'" role="tab" type="button" data-d="'+d[0]+'" aria-selected="'+(cur===d[0])+'">'+d[1]+(tdone?' <span class="ck">✓</span>':'')+'<small>'+esc(s.name)+'</small></button>';
+    var tdone=false,wsd=weekStart(new Date()),ix={lun:0,mar:1,mie:2,jue:3,vie:4,sab:5,dom:6}[d[0]],tds=ymd(new Date(wsd.getFullYear(),wsd.getMonth(),wsd.getDate()+ix)),hh;for(hh=0;hh<hist.length;hh++){if(hist[hh].d===tds){tdone=true;}}
+    return '<button class="tab'+(isT?' today':'')+(s.opt?' we':'')+'" role="tab" type="button" data-d="'+d[0]+'" aria-selected="'+(cur===d[0])+'">'+(s.opt?d[2]:d[1])+(tdone?' <span class="ck">✓</span>':'')+'<small>'+(s.opt?'Opcional · ':'')+esc(s.name)+'</small></button>';
   }).join('');
   var key=sessionFor(cur), s0=S[key], dayKey=cur+'-'+key+(rain?'-r':'');
   var s={name:s0.name,focus:s0.focus,time:s0.time,eq:s0.eq,main:(rain&&s0.rainMain)||s0.main,fin:(rain&&s0.rainFin)||s0.fin};
-  var useWarm=(key==='lun'||key==='mar'||key==='vie');
+  var useWarm=(key==='lun'||key==='mar'||key==='vie');var soft=(key==='suave'||key==='sab'||key==='dom');
   var list=[],n=1,html='';
-  html+='<section class="head"><h2>'+esc(s.name)+'</h2><div>'+esc(s.focus)+'</div><div class="meta"><span class="chip time">'+esc(s.time)+'</span>'+(rain?'<span class="chip" style="background:var(--accent);color:#fff">Bajo techo</span>':'')+s.eq.map(chip).join('')+'</div>'+
+  html+='<section class="head"><h2>'+esc(s.name)+'</h2><div>'+esc(s.focus)+'</div><div class="meta"><span class="chip time">'+esc(s.time)+'</span>'+(s0.opt?'<span class="chip">Opcional</span>':'')+(rain?'<span class="chip" style="background:var(--accent);color:#fff">Bajo techo</span>':'')+s.eq.map(chip).join('')+'</div>'+
     '<div class="ses" id="ses"></div><div class="bar"><i id="pb"></i></div><div class="prog"><span id="pt"></span><span>Marca cada ejercicio al terminar</span></div></section>';
   if(useWarm){html+='<div class="sec">Calentamiento · 5 min</div>';WARM.forEach(function(e){html+=card(dayKey,e,n++);list.push(dayKey+'-'+e.id);});}
-  html+='<div class="sec">'+(key==='cardio'?'Entrenamiento':key==='suave'?'Movilidad y core':'Fuerza')+'</div>';
+  html+='<div class="sec">'+(key==='cardio'?'Entrenamiento':key==='dom'?'Estiramientos y movilidad':soft?'Movilidad y core':'Fuerza')+'</div>';
   s.main.forEach(function(e){html+=card(dayKey,e,n++);list.push(dayKey+'-'+e.id);});
-  html+='<div class="sec">'+(key==='suave'?'Para cerrar':key==='cardio'?'Cierre':'Con balón')+'</div>';
+  html+='<div class="sec">'+(soft?'Para cerrar':key==='cardio'?'Cierre':'Con balón')+'</div>';
   s.fin.forEach(function(e){html+=card(dayKey,e,n++);list.push(dayKey+'-'+e.id);});
   if(vsel==='hist'){document.getElementById('view').innerHTML=histHtml();}else{document.getElementById('view').innerHTML=html;}
   document.getElementById('tabs').style.display=vsel==='hist'?'none':'';
@@ -1030,7 +1052,7 @@ function wake(){try{if(!document.hidden&&navigator.wakeLock&&!wl){navigator.wake
 document.addEventListener('visibilitychange',function(){if(document.hidden){stopSpeak();}else{wake();}});
 document.addEventListener('click',wake);wake();
 load();
-(function(){var m={1:'lun',2:'mar',3:'mie',4:'jue',5:'vie'};var d=m[new Date().getDay()];if(d)cur=d;})();
+(function(){var m={1:'lun',2:'mar',3:'mie',4:'jue',5:'vie',6:'sab',0:'dom'};var d=m[new Date().getDay()];if(d)cur=d;})();
 render();
 </script>
 </body>
